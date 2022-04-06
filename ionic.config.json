@@ -1,0 +1,7 @@
+{
+  "name": "calculadora2022pippo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
