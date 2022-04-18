@@ -1,20 +1,138 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+        {{(memoria == '0') ? '' : memoria}}  {{(operacao != '') ? operacao : ''}} {{valor}}
+        </ion-col> 
+        <ion-col>
+          
+        </ion-col>
+        <ion-col>
+          
+        </ion-col>
+        <ion-col> 
+          <ion-button (click)="limpaCalculadora()">
+            c
+          </ion-button>
+        </ion-col>  
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="selecionaOperacao('^')">
+          ^
+          </ion-button>
+        </ion-col> 
+        <ion-col>
+        <ion-button (click)="CalculaPi()">
+          π
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="CalculaMatricula()">
+          M*
+        </ion-button>
+      </ion-col>
+      <ion-col (click)="selecionaOperacao('%')">
+        <ion-button>
+          %
+        </ion-button>
+      </ion-col>   
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="adicionaNoValor('7')">
+            7
+          </ion-button>
+        </ion-col> 
+        <ion-col>
+        <ion-button (click)="adicionaNoValor('8')">
+          8
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="adicionaNoValor('9')">
+          9
+        </ion-button>
+      </ion-col>
+      <ion-col (click)="selecionaOperacao('/')">
+        <ion-button>
+          /
+        </ion-button>
+      </ion-col>   
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="adicionaNoValor('4')">
+            4
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="adicionaNoValor('5')">
+            5
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="adicionaNoValor('6')">
+            6
+          </ion-button>
+        </ion-col>
+        <ion-col (click)="selecionaOperacao('*')">
+          <ion-button>
+            x
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="adicionaNoValor('1')">
+            1
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="adicionaNoValor('2')">
+            2
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="adicionaNoValor('3')">
+            3
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="selecionaOperacao('-')">
+            -
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="adicionaPonto()">
+            .
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="adicionaNoValor('0')">
+            0
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="selecionaOperacao('+')">
+            +
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="calculaResultado()">
+            =
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+   </ion-grid>
   </div>
 </ion-content>
